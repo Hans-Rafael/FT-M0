@@ -1,0 +1,22 @@
+h1 {
+    Color: Green;
+}
+img {margin: auto;
+    display: block;
+    width:  250px;   
+    border :  2px solid lightblue;
+}
+#personal {
+    font-family: 'times new roman' ;
+}
+.cl {text-transform: uppercase;
+    font-weight: bolder; 
+  }
+  #foto{ text-align: center;}
+
+
+body {
+      background: rgb(224, 240, 243);
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: 'Arial' ;}
