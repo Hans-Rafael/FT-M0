@@ -46,7 +46,7 @@ function forEach(array, cb) {
   //Tu código:
   for (i=0; i < array.length; i++){
     cb(array[i]);
-  }
+  }// array.forEach(cb);
 }
 
 function map(array, cb) {
@@ -71,6 +71,10 @@ function filter(array) {
     }
   }
   return nuevoArray;*/
+  /*
+  var filtro = array.filter(function(el){
+    return el.chartAt(0) === "a" });
+  return filtro;*/
   var Narray= [];
   for (var i=0 ; i < array.length; i++){
     if ("a"=== array[i].charAt(0)){ Narray.push(array[i])};

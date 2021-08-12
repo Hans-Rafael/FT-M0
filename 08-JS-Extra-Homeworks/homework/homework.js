@@ -1,6 +1,6 @@
 // No cambies los nombres de las funciones.
 
-function deObjetoAmatriz(objeto){
+function deObjetoAmatriz(objeto) {
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
   //Ejemplo: 
@@ -10,6 +10,13 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  //const entries = Object.entries(objeto); return entries;
+  var array = [];
+  for (let k in objeto) {
+    //const elemento = object[Key];
+    array.push([k, objeto[k]]);
+  }
+  return array;
 }
 
 
@@ -18,16 +25,41 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var objeto = {};
+  for (var i in string) {
+    objeto[string[i]] = (objeto[string[i]] || 0) + 1; // Incrementamos el valor si el elemento ya existe
+  }
+  return objeto;
+  /*for (var j in objeto){
+      console.log(objeto);
+  }*/
 }
-
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-}
+  var mayor = '';
+  var menor = '';
 
+  for (var i = 0; i < s.length; i++) {
+    if (s[i] === s[i].toUpperCase()) {
+      mayor = mayor + s[i];
+    }
+    else {
+      menor = menor + s[i];
+    }
+
+  }
+  return mayor + menor;
+}
+// return "".concat(mayor,menor);
+//otromodo de realizar;
+/*var fraseEspejo = str.split(' ').map(function(palabra){
+  return palabra.split('').reverse().join('');
+}).join(' ');
+return fraseEspejo;*/
 
 function asAmirror(str) {
   //La función recibe una frase. 
@@ -35,21 +67,44 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+  str = str.split('');
+  str = str.reverse();
+  str = str.join('')
+  var ar = [];
+  str = str.split(' ');
 
-
-function capicua(numero){
-  //Escribe una función, la cual recibe un número y determina si es o no capicúa.
-  //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
-  //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
-  //Escribe tu código aquí
+  for (var i = 0; i < str.length; i++) {
+    ar.unshift(str[i]);
+  }
+  return ar.join(' ');
 }
 
 
-function deleteAbc(cadena){
+function capicua(numero) {
+  //Escribe una función, la cual recibe un número y determina si es o no capicúa.
+  //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
+  //izquierda a derecha que de derecha a izquierda. Caso contrario retorna  
+  //Escribe tu código aquí 3223
+  var numInv = numero.toString();
+  var numero = numero.toString(); // convierto numero a string y comparo en invierto
+  numInv = numero.split('');
+  numInv = numInv.reverse();
+  numInv = numInv.join('');
+  if (numero === numInv) {
+    return " Es capicua";
+  }
+  else { return "No es capicua"; }
+}
+
+
+function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  cadena = cadena.replace('a', '');
+  cadena = cadena.replace('b', '');
+  cadena = cadena.replace('c', '');
+  return cadena;
 }
 
 
@@ -60,7 +115,7 @@ function sortArray(arr) {
 }
 
 
-function buscoInterseccion(arreglo1, arreglo2){
+function buscoInterseccion(arreglo1, arreglo2) {
   //Existen dos arrays, cada uno con 5 números. A partir de ello, escribir una función que permita 
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
@@ -74,13 +129,13 @@ function buscoInterseccion(arreglo1, arreglo2){
 // --------------------------------
 
 module.exports = {
-   deObjetoAmatriz,
-   numberOfCharacters,
-   capToFront,
-   asAmirror,
-   capicua,
-   deleteAbc,
-   sortArray,
-   buscoInterseccion,
+  deObjetoAmatriz,
+  numberOfCharacters,
+  capToFront,
+  asAmirror,
+  capicua,
+  deleteAbc,
+  sortArray,
+  buscoInterseccion,
 };
 
