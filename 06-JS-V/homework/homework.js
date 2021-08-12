@@ -14,6 +14,9 @@ function crearUsuario() {
     this.nombre = opciones.nombre;
     this.email = opciones.email;
     this.password = opciones.password;
+    /*
+    
+    Check for repeated characters in a string Javascript */
   }
 
   Usuario.prototype.saludar = function() {
