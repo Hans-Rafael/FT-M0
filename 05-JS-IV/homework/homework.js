@@ -5,7 +5,7 @@ function crearGato(nombre, edad) {
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
-  // Tu código:
+  // Tu código:// un solo array,siclo con contador
   var obj = {
     nombre: nombre,
     edad: edad,
