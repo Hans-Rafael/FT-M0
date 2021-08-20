@@ -8,7 +8,7 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-  /*
+
   function Usuario(opciones) {
     this.usuario = opciones.usuario;
     this.nombre = opciones.nombre;
@@ -20,22 +20,21 @@ function crearUsuario() {
     return 'Hola, mi nombre es ' + this.nombre;
   };
   return Usuario;
-  */
   // Ahora de la forma ES6
-  class Usuario {
+  /*class Usuario {
     constructor(opciones) {
       this.usuario = opciones.usuario;
       this.nombre = opciones.nombre;
       this.email = opciones.email;
       this.password = opciones.password;
-
     }// end del constructor
     // agrego el prototype solo con el nombre del mismo
     Saludar() {
       return 'Hola, mi nombre es ' + this.nombre;
     }// final del prototype
   }// final de la clase
-  return Usuario;////
+  return Usuario;/////
+  */// no me trabajo en ES6
 }
 
 
@@ -60,6 +59,7 @@ function agregarStringInvertida() {
     }
     return StrInvertida;
   }
+  // return this.split("").reverse().join(""); //forma mas corta y directa 
 }
 
 // ---------------------------------------------------------------------------//
@@ -95,7 +95,7 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
-  let Npersona = new Persona("Juan", "Perez", 22, "Saavedra 123");
+  let Npersona = new Persona ("Juan", "Perez", 22, "Saavedra 123");
   return Npersona;
 }
 
@@ -105,6 +105,11 @@ function agregarMetodo() {
   Persona.prototype.datos = function () {
     return this.nombre + ", " + this.edad + " años";
   }
+  /* class Persona {
+   datos(){
+     return this.nombre + ", "+ this.edad + " años";
+   }
+  }*/// no pude en ES6
 }
 
 
