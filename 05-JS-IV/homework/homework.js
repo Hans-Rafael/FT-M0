@@ -22,16 +22,16 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property] = null;
+  objeto[property] = null;/* objeto[property]= objeto["property name"] */
   return objeto;
 }
 
-function invocarMetodo(objeto, metodo) {
+function invocarMetodo(objeto, metodo) { /*/cuando llame metodo con comillas debe ser*/
   // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto[metodo]();//por que no se puede invocar con DOT. objeto.metodo();??
+  objeto[metodo]();/*se invoca un metodo con los parentesis */
   // objeto.metodo.call();
 }
 
@@ -47,7 +47,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto[unaPropiedad];//de nuevo funciona con [] perono con . por que??
+  delete objeto[unaPropiedad];//
  
   return objeto;
 }
@@ -81,6 +81,8 @@ function tienePropiedad(objeto, propiedad) {
   // Tu código:
  if (objeto[propiedad]){ return true;}
  return false;
+ //o puedo usar 
+      //return objeto.hasOwnPropety(propiedad)
 }
 
 function verificarPassword(usuario, password) {
@@ -137,7 +139,7 @@ function sumarLikesDeUsuario(usuario) {
 
 function agregarMetodoCalculoDescuento(producto) {
   // *14*Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto["precio"]") y "porcentajeDeDescuento" para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
